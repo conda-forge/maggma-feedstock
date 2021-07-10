@@ -38,6 +38,7 @@ requirements:
     - setuptools
     - sshtunnel >=0.1.5
     - tqdm >=4.19.6
+    - orjson
 
 test:
   imports:
