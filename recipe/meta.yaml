@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.38.1" %}
+{% set version = "0.39.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: f2df1e7b878ebd8acd077c81ed2d4f91857d4a00343d804d92f78ce13edac970
+  sha256: d742addb25f466ba4c425539f177961d209357dde7af288e8bfcbcc53854979d
 
 build:
   number: 0
@@ -39,6 +39,8 @@ requirements:
     - sshtunnel >=0.1.5
     - tqdm >=4.19.6
     - orjson
+    - boto3
+    - pyzmq
 
 test:
   imports:
