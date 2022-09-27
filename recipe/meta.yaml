@@ -40,7 +40,7 @@ requirements:
     - tqdm >=4.19.6
     - orjson
     - boto3
-    - pyzmq =22.3.0
+    - pyzmq =24.0.1
 
 test:
   imports:
