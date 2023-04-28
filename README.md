@@ -1,11 +1,11 @@
-About maggma
-============
+About maggma-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/maggma-feedstock/blob/main/LICENSE.txt)
 
 Home: https://materialsproject.github.io/maggma/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/maggma-feedstock/blob/main/LICENSE.txt)
 
 Summary: MongoDB aggregation machine
 
