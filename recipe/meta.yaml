@@ -30,7 +30,7 @@ requirements:
     - monty >=1.0.2
     - msgpack-python >=0.5.6
     - numpy >=1.17.3
-    - pydantic >=0.32.2
+    - pydantic >=0.32.2,<=1.10.11
     - pydash >=4.1.0
     - pymongo >=3.6
     - pynng >=0.5.0
