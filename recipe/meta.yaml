@@ -41,6 +41,7 @@ requirements:
     - orjson
     - boto3
     - pyzmq =24.0.1
+    - ruamel.yaml
 
 test:
   imports:
