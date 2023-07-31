@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.51.25" %}
+{% set version = "0.52.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: 34aaabcaf04cba650f070e959d34b7b509b18663fa82d20e65190502ffccf738
+  sha256: b899f8a83d46071c7ac419bcbcc503947ec41ed19b6a8be7bb1b784b2db8eaf9
 
 build:
   number: 0
