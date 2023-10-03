@@ -3,21 +3,11 @@ About maggma-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/maggma-feedstock/blob/main/LICENSE.txt)
 
-Home: https://materialsproject.github.io/maggma/
+Home: https://github.com/materialsproject/maggma
 
 Package license: BSD-3-Clause
 
-Summary: MongoDB aggregation machine
-
-Development: https://github.com/materialsproject/maggma
-
-Documentation: https://materialsproject.github.io/maggma/
-
-Maggma is a framework to build data pipelines from files on disk all
-the way to a REST API in scientific environments. Maggma has been
-developed by the Materials Project (MP) team at Lawrence Berkeley
-Labs.
-
+Summary: Framework to develop datapipelines from files on disk to full dissemenation API
 
 Current build status
 ====================

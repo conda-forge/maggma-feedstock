@@ -1,7 +1,6 @@
 {% set name = "maggma" %}
 {% set version = "0.57.0" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,61 +10,57 @@ source:
   sha256: 149226712f393a7f3c9b5fe959c1601d115308e15ea9174079cd4b64f8a83eda
 
 build:
-  number: 0
+  entry_points:
+    - mrun = maggma.cli:run
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
+    - python >=3.8
+    - setuptools >=61.0.0
+    - setuptools-scm >=5
     - pip
-    - setuptools_scm
-    - python >=3.7
   run:
-    - aioitertools >=0.5.1
-    - dnspython >=1.16.0
-    - fastapi >=0.42.0
-    - jsonschema >=3.1.1
-    - mongogrant >=0.3.1
-    - mongomock >=3.10.0
-    - monty >=1.0.2
-    - msgpack-python >=0.5.6
-    - numpy >=1.17.3
+    - python >=3.8
+    - setuptools
+    - ruamel.yaml <0.18
     - pydantic >=2.0
     - pydantic-settings >=2.0.3
+    - pymongo >=4.2.0
+    - monty >=2023.9.25
+    - mongomock >=3.10.0
     - pydash >=4.1.0
-    - pymongo >=3.6
-    - pynng >=0.5.0
-    - python >=3.7
-    - setuptools
-    - sshtunnel >=0.1.5
+    - jsonschema >=3.1.1
     - tqdm >=4.19.6
-    - orjson
-    - boto3
-    - pyzmq =24.0.1
-    - ruamel.yaml
-    - uvicorn
+    - mongogrant >=0.3.1
+    - aioitertools >=0.5.1
+    - numpy >=1.17.3
+    - fastapi >=0.42.0
+    - pyzmq ==24.0.1
+    - dnspython >=1.16.0
+    - sshtunnel >=0.1.5
+    - msgpack-python >=0.5.6
+    - orjson >=3.9.0
+    - boto3 >=1.20.41
+    - python-dateutil >=2.8.2
+    - uvicorn >=0.18.3
 
 test:
   imports:
     - maggma
   commands:
     - pip check
+    - mrun --help
   requires:
     - pip
 
 about:
-  home: https://materialsproject.github.io/maggma/
+  home: https://github.com/materialsproject/maggma
+  summary: Framework to develop datapipelines from files on disk to full dissemenation API
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
-  summary: MongoDB aggregation machine
-  description: |
-    Maggma is a framework to build data pipelines from files on disk all 
-    the way to a REST API in scientific environments. Maggma has been 
-    developed by the Materials Project (MP) team at Lawrence Berkeley 
-    Labs.
-  doc_url: https://materialsproject.github.io/maggma/
-  dev_url: https://github.com/materialsproject/maggma
 
 extra:
   recipe-maintainers:
