@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.57.0" %}
+{% set version = "0.57.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: 149226712f393a7f3c9b5fe959c1601d115308e15ea9174079cd4b64f8a83eda
+  sha256: 624fc3b2513d815e2e3ee87dc81956f09c8c35c20489b2280a078df772c38194
 
 build:
   entry_points:
     - mrun = maggma.cli:run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -38,7 +38,7 @@ requirements:
     - aioitertools >=0.5.1
     - numpy >=1.17.3
     - fastapi >=0.42.0
-    - pyzmq ==24.0.1
+    - pyzmq >=24.0.1
     - dnspython >=1.16.0
     - sshtunnel >=0.1.5
     - msgpack-python >=0.5.6
