@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.69.0" %}
+{% set version = "0.69.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: c62b13785da3979219a88f49f24e6925bb5a9c76b409d32d631abce76ed229f2
+  sha256: f225d835e3311be98b4b899ae11d05d7fd84d4441994b6276c276b051a9b9ce8
 
 build:
   entry_points:
@@ -40,7 +40,7 @@ requirements:
     - aioitertools >=0.5.1
     - numpy >=1.17.3,<2
     - fastapi >=0.42.0
-    - pyzmq >=24.0.1
+    - pyzmq >=25.1.1
     - dnspython >=1.16.0
     - sshtunnel >=0.1.5
     - msgpack-python >=0.5.6
