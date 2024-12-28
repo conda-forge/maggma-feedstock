@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.70.0" %}
+{% set version = "0.71.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: 1f42754d369b487411ead44aab9416d7d7ff7f08566fac9d2b04c00d25dc24d7
+  sha256: fe1e7248960c48343e7071c2cd0bc6504ae06dbbd34104ee68aa2ecfc71c56d7
 
 build:
   entry_points:
     - mrun = maggma.cli:run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
