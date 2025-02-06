@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.71.2" %}
+{% set version = "0.71.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: f9c64440c332e2a5f256118ee87d2cb079d66a127489d93d80035dfdee56347b
+  sha256: ad267385ff8778ba95859abd9eb302da6a19d22370b03a5703c8fd0ffb4a72f9
 
 build:
   entry_points:
@@ -30,7 +30,7 @@ requirements:
     - ruamel.yaml >=0.17
     - pydantic >=2.0
     - pydantic-settings >=2.0.3
-    - pymongo >=4.2.0
+    - pymongo >=4.2.0,<4.11
     - monty >=2024.5.24
     - mongomock >=3.10.0
     - pydash >=4.1.0
