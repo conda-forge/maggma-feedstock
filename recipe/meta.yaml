@@ -1,5 +1,5 @@
 {% set name = "maggma" %}
-{% set version = "0.72.0" %}
+{% set version = "0.72.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
-  sha256: e65ed3d1ec6b722cad0e97b7dec678eedfe8557d431b7ab283e6ba86b5dbfdc1
+  sha256: 929ea18ae92e1b91480541af84a36bca2c817e36483c6eae874438a2d523bd38
 
 build:
   entry_points:
@@ -23,6 +23,7 @@ requirements:
     - setuptools-scm >=5
     - pip
   run:
+    - paramiko <4
     - jsonlines >=4.0.0
     - pandas >=2.2
     - python >={{ python_min }}
