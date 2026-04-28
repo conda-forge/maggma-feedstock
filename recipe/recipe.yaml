@@ -1,24 +1,28 @@
-{% set name = "maggma" %}
-{% set version = "0.72.1" %}
+schema_version: 1
+
+context:
+  name: maggma
+  version: "0.72.1"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/maggma-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/maggma-${{ version }}.tar.gz
   sha256: 929ea18ae92e1b91480541af84a36bca2c817e36483c6eae874438a2d523bd38
 
 build:
-  entry_points:
-    - mrun = maggma.cli:run
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - mrun = maggma.cli:run
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools >=61.0.0
     - setuptools-scm >=5
     - pip
@@ -26,7 +30,7 @@ requirements:
     - paramiko <4
     - jsonlines >=4.0.0
     - pandas >=2.2
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - setuptools
     - ruamel.yaml >=0.17
     - pydantic >=2.0
@@ -50,21 +54,24 @@ requirements:
     - python-dateutil >=2.8.2
     - uvicorn >=0.18.3
 
-test:
-  imports:
-    - maggma
-  commands:
-    - pip check
-    - mrun --help
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - maggma
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - mrun --help
 
 about:
-  home: https://github.com/materialsproject/maggma
   summary: Framework to develop datapipelines from files on disk to full dissemenation API
   license: BSD-3-Clause
   license_file: LICENSE
+  homepage: https://github.com/materialsproject/maggma
 
 extra:
   recipe-maintainers:
