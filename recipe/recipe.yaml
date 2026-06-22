@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: maggma
-  version: "0.72.1"
+  version: 0.73.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/maggma-${{ version }}.tar.gz
-  sha256: 929ea18ae92e1b91480541af84a36bca2c817e36483c6eae874438a2d523bd38
+  sha256: 5538f1ba6ee999a3b6d67e70126323d7e283aa8bce1ef1c3a789b77b6779dfea
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -27,11 +27,10 @@ requirements:
     - setuptools-scm >=5
     - pip
   run:
-    - paramiko <4
+    - paramiko >=5.0
     - jsonlines >=4.0.0
     - pandas >=2.2
     - python >=${{ python_min }}
-    - setuptools
     - ruamel.yaml >=0.17
     - pydantic >=2.0
     - pydantic-settings >=2.0.3
@@ -41,19 +40,14 @@ requirements:
     - pydash >=4.1.0
     - jsonschema >=3.1.1
     - tqdm >=4.19.6
-    - mongogrant >=0.3.1
     - aioitertools >=0.5.1
     - numpy >=1.26
-    - fastapi >=0.42.0
     - pyzmq >=25.1.1
     - dnspython >=1.16.0
-    - sshtunnel >=0.1.5
     - msgpack-python >=0.5.6
     - orjson >=3.9.0
     - boto3 >=1.20.41
     - python-dateutil >=2.8.2
-    - uvicorn >=0.18.3
-
 tests:
   - python:
       imports:
