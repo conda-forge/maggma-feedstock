@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: maggma
-  version: 0.74.0
+  version: 0.76.0
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/maggma-${{ version }}.tar.gz
-  sha256: 9152f892067cf7f35880b2528d72e193855cb497d0657dde92e0e87a8a0a1ff0
+  sha256: dd84058bac9488f327b6e7c69ba5d70f5208c70a7da6b22a3a8338e4ed4f0f18
 
 build:
   number: 0
@@ -35,7 +35,7 @@ requirements:
     - ruamel.yaml >=0.17
     - pydantic >=2.0
     - pydantic-settings >=2.0.3
-    - pymongo >=4.2.0
+    - pymongo >=4.5.0
     - monty >=2024.5.24
     - pydash >=4.1.0
     - jsonschema >=3.1.1
@@ -49,7 +49,7 @@ requirements:
     - boto3 >=1.20.41
     - python-dateutil >=2.8.2
     - mongomock-ng >=7.6.0
-    - click
+    - click >=7.0
 tests:
   - python:
       imports:
