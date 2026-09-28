@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: maggma
-  version: 0.76.0
+  version: "0.77.1"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/maggma-${{ version }}.tar.gz
-  sha256: dd84058bac9488f327b6e7c69ba5d70f5208c70a7da6b22a3a8338e4ed4f0f18
+  sha256: b1ade4178a0918f79ad70c45e6c2d01324d491dda9e302c34d1ffc512a9f65cc
 
 build:
   number: 0
